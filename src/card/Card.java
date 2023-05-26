@@ -13,44 +13,38 @@ package card;
  * add your name as a modifier.
  * @author srinivsi
  */
-public class Card {
+class Card {
+    private String suit;
+    private String value;
 
-   private String suit; //clubs, spades, diamonds, hearts
-   private int value;//1-13
-
-   public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
-
-    Card(String string, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    /**
-     * @return the suit
-     */
-    public String getSuit() {
-        return suit;
+    public Card() {
+        suit = "";
+        value = "";
     }
 
-    /**
-     * @param suit the suit to set
-     */
+    public Card(String suit, String value) {
+        this.suit = suit;
+        this.value = value;
+    }
+
     public void setSuit(String suit) {
         this.suit = suit;
     }
 
-    /**
-     * @return the value
-     */
-    public int getValue() {
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+
+    public String getValue() {
         return value;
     }
 
-    /**
-     * @param value the value to set
-     */
-    public void setValue(int value) {
-        this.value = value;
+    @Override
+    public String toString() {
+        return value + " of " + suit;
     }
-   
-   
-    
 }

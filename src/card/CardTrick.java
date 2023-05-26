@@ -24,21 +24,8 @@ class Card {
     private String suit;
     private String value;
 
-    public Card() {
-        suit = "";
-        value = "";
-    }
-
     public Card(String suit, String value) {
         this.suit = suit;
-        this.value = value;
-    }
-
-    public void setSuit(String suit) {
-        this.suit = suit;
-    }
-
-    public void setValue(String value) {
         this.value = value;
     }
 
@@ -82,10 +69,13 @@ class MagicHand {
     }
 
     public Card pickCard() {
-        Card luckyCard = new Card();
-        luckyCard.setValue("7");  // Set the card number as desired
-        luckyCard.setSuit("Spades");  // Set the card suit as desired
-        return luckyCard;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Pick a card from the magic hand:");
+        System.out.print("Enter the suit (Hearts, Diamonds, Clubs, Spades): ");
+        String suit = scanner.nextLine();
+        System.out.print("Enter the value (1-13, Jack): ");
+        String value = scanner.nextLine();
+        return new Card(suit, value);
     }
 
     public boolean searchCard(Card userCard) {
@@ -98,7 +88,7 @@ class MagicHand {
     }
 }
 
-public class CardTrick {
+public class CardTrick  {
     public static void main(String[] args) {
         MagicHand magicHand = new MagicHand();
         magicHand.fillHand();
@@ -112,3 +102,6 @@ public class CardTrick {
             System.out.println("Congratulations! You found a match!");
         } else {
             System.out.println("Sorry, no match found.");
+        }
+    }
+}

@@ -74,7 +74,7 @@ class MagicHand {
         System.out.println("Pick a card from the magic hand:");
         System.out.print("Enter the suit (Hearts, Diamonds, Clubs, Spades): ");
         String suit = scanner.nextLine();
-        System.out.print("Enter the value (1-13, Jack): ");
+        System.out.print("Enter the value (1-13): ");
         String value = scanner.nextLine();
         return new Card(suit, value);
     }
